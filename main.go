@@ -143,7 +143,7 @@ func getValues(values []string, rootNode string) map[string]string {
 	m := make(map[string]string)
 
 	for _, value := range values {
-		parts := strings.Split(value, "=")
+		parts := strings.SplitAfterN(value, "=", 2)
 
 		// Need to prefix everything with the root node name
 		// This doesn't actually make it into the values interface, it's something traefik specific that we don't need
